@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Sudoku</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="public/styling/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="public/styling/css/styles.css" rel="stylesheet" />
+        <link href="public/styling/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div id="loading" class="container-narrow">
+            <p>
+                Loading...
+            </p>
+        </div>
+        <div id="app-wrap" class="container-narrow hidden">
+            <h1 id="title">Sudoku</h1>            
+            <br>
+            
+            <ul id="generator-tabs" class="nav nav-tabs">
+                <li>
+                    <a id="easy" title="Generate an easy puzzle" class="green-text" 
+                            href="#">Easy</a>
+                </li>
+                <li>
+                    <a id="medium" class="green-text"
+                            title="Generate a medium puzzle" href="#">Medium</a>
+                </li>
+                <li>
+                    <a id="hard" title="Generate a hard puzzle" class="green-text"
+                            href="#">Hard</a>
+                </li>
+                <li class="pull-right">
+                    <a id="import" title="Import your own puzzle" class="green-text"
+                            href="#">
+                        Import...
+                    </a>
+                </li>
+            </ul>
+            
+            <div id="import-controls">
+                <input id="import-string" class="input-block-level" 
+                    placeholder="Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces."
+                    maxlength="81"
+                    type="text"/>
+            </div>
+            
+            <div id="puzzle-controls">
+                <a id="refresh" class="pull-right green-text"
+                        title="Refresh the current puzzle" href="#">
+                    Refresh  
+                </a>
+            </div>
+
+            <table class="table table-striped">
+                <tbody id="sudoku-board"></tbody>
+            </table>
+            
+            <!-- Message box -->
+            <div id="message" class="alert alert-error">
+                <button type="button" class="close" data-dismiss="alert">
+                    &times;
+                </button>
+                <div id="text"></div>
+            </div>
+            
+            <div id="solver-controls">
+                <button id="solve" class="btn btn-danger" 
+                        title="Solve the current puzzle!" 
+                        data-placement="bottom">
+                    Solve!
+                </button>
+                <button id="get-options" class="btn pull-right btn-success" 
+                        title="Show all possible values for each empty square" 
+                        data-placement="bottom">
+                    Show Options
+                </button>
+            </div>
+            
+
+        </div>
+        <script src="public/browser/js/jquery.min.js"></script>
+        <script src="public/browser/js/bootstrap.min.js"></script>
+        <script src="sudoku.js"></script>
+        <script src="public/browser/js/app.js"></script>
+    </body>
+</html>
